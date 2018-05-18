@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded",
 			function(request)
 			{
 				document.querySelector("#Thunderbolt")
-					.innerHTML = request;
+					.innerHTML = request.responseText;
 			}
 		);
 
