@@ -32,10 +32,11 @@ function loadClusterTiles(cluster_list)
 	var clusters = ["Thunderbolt", "CM_tagging"];
 	//var clusters = cluster_list.responseText.split(/\r\n|\r|\n/);
 	var cluster_count = clusters.length;
-	console.log("hello");
-	console.log(clusters.toString());
-	for(String cluster_name : clusters)
+	
+	for(var i=0; i<cluster_count; i++)
 	{
+		var cluster_name = clusters[i];
+
 		$ajaxUtils.sendGetRequest(clusterTileUrl, 
 			function(request)
 			{
