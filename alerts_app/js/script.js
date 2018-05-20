@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded",
 			{
 				var count = request.responseText.split(/\r\n|\r|\n/).length;
 
-				document.querySelector("#Thunderbolt").innerHTML = count;
+				document.querySelector("#Thunderbolt").p.innerHTML = count;
 				//document.querySelector("#Thunderbolt")
 				//	.innerHTML = request.responseText;
 			}
