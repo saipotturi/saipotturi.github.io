@@ -4,8 +4,10 @@ document.addEventListener("DOMContentLoaded",
 		$ajaxUtils.sendGetRequest("data/Thunderbolt.txt", 
 			function(request)
 			{
-				document.querySelector("#Thunderbolt")
-					.innerHTML = request.responseText;
+				var count = request.responseText.split(/\r\n|\r|\n/).length;
+				document.querySelector("#Thunderbolt").innerHTML = count;
+				//document.querySelector("#Thunderbolt")
+				//	.innerHTML = request.responseText;
 			}
 		);
 
