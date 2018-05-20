@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded",
 			function(request)
 			{
 				var count = request.responseText.split(/\r\n|\r|\n/).length;
-				if(count === 2)
+				if(count == 2)
 				{
 					document.querySelector("#Thunderbolt").style.backgroundColor = "red";
 				}
