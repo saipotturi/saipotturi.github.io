@@ -5,8 +5,11 @@ document.addEventListener("DOMContentLoaded",
 			function(request)
 			{
 				var count = request.responseText.split(/\r\n|\r|\n/).length;
-
-				document.querySelector("#Thunderbolt").p.innerHTML = count;
+				if(count === 2)
+				{
+					document.querySelector("#Thunderbolt").style.backgroundColor = "red";
+				}
+				document.querySelector("#Thunderbolt").querySelector("p").innerHTML = count;
 				//document.querySelector("#Thunderbolt")
 				//	.innerHTML = request.responseText;
 			}
