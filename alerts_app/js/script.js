@@ -32,6 +32,7 @@ function loadClusterTiles(cluster_list)
 	var clusters = cluster_list.responseText.split(/\r\n|\r|\n/);
 	var cluster_count = clusters.length;
 	console.log(clusters.toString());
+	console.log(cluster_count);
 	for(String cluster_name : clusters)
 	{
 		$ajaxUtils.sendGetRequest(clusterTileUrl, 
