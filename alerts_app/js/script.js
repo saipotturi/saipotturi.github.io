@@ -5,9 +5,17 @@ document.addEventListener("DOMContentLoaded",
 			function(request)
 			{
 				var count = request.responseText.split(/\r\n|\r|\n/).length;
-				if(count == 2)
+				if(count > 1)
 				{
 					document.querySelector("#Thunderbolt").style.backgroundColor = "red";
+				}
+				else if(count == 1)
+				{
+					document.querySelector("#Thunderbolt").style.backgroundColor = "yellow";
+				}
+				else
+				{
+					document.querySelector("#Thunderbolt").style.backgroundColor = "green";
 				}
 				document.querySelector("#Thunderbolt").querySelector("p").innerHTML = count;
 				//document.querySelector("#Thunderbolt")
