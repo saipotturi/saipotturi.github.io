@@ -30,7 +30,8 @@ document.addEventListener("DOMContentLoaded",
 
 function loadClusterTiles(cluster_list)
 {
-	var clusters = ["Thunderbolt", "CM_tagging"];
+	//var clusters = ["Thunderbolt", "CM_tagging"];
+	var clusters = ["Thunderbolt"];
 	//var clusters = cluster_list.responseText.split(/\r\n|\r|\n/);
 	var cluster_count = clusters.length;
 	
