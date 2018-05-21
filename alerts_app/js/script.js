@@ -51,6 +51,7 @@ function loadClusterTiles(cluster_list)
 		$ajaxUtils.sendGetRequest(`data/${cluster_name}.txt`, function(request)
 			{
 				var count = request.responseText.split(/\r\n|\r|\n/).length;
+				console.log(cluster_name);
 				if(cluster_name == "Thunderbolt")
 					console.log("YYYYYYYYYYYYYYYYYYY");
 				if(count > 1)
