@@ -37,8 +37,7 @@ function loadClusterTiles(cluster_list)
 	for(var i=0; i<cluster_count; i++)
 	{
 		var cluster_name = clusters[i];
-		clusterTileUrl = testhtml;
-		console.log(clusterTileUrl);
+
 		$ajaxUtils.sendGetRequest(clusterTileUrl, 
 			function(clusterTileUrl)
 			{
@@ -49,7 +48,7 @@ function loadClusterTiles(cluster_list)
 			}
 		,false);
 
-		$ajaxUtils.sendGetRequest(`"data/${cluster_name}"`, function(request)
+		$ajaxUtils.sendGetRequest(`"data/${cluster_name}.txt"`, function(request)
 			{
 				var count = request.responseText.split(/\r\n|\r|\n/).length;
 				if(count > 1)
@@ -58,13 +57,13 @@ function loadClusterTiles(cluster_list)
 				}
 				else if(count == 1)
 				{
-					document.querySelector("#${cluster_name}").style.backgroundColor = "yellow";
+					document.querySelector(`"#${cluster_name}"`).style.backgroundColor = "yellow";
 				}
 				else
 				{
-					document.querySelector("#${cluster_name}").style.backgroundColor = "green";
+					document.querySelector(`"#${cluster_name}"`).style.backgroundColor = "green";
 				}
-				document.querySelector("#${cluster_name}").querySelector("p").innerHTML = count;
+				document.querySelector(`"#${cluster_name}"`).querySelector("p").innerHTML = count;
 			});
 	}
 }
