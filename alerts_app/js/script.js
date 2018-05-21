@@ -38,12 +38,11 @@ function loadClusterTiles(cluster_list)
 		var cluster_name = clusters[i];
 
 		$ajaxUtils.sendGetRequest(clusterTileUrl, 
-			function(testHtml)
+			function(clusterTileUrl)
 			{
-				var tileHtml = insertProperty(testHtml, "cluster_variable", cluster_name);
-
+				request = clusterTileUrl;
+				var tileHtml = insertProperty(request, "cluster_variable", cluster_name);
 				console.log(tileHtml);
-
 				insertHtml(cluster_row, tileHtml);
 			}
 		,false);
