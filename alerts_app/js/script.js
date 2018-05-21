@@ -1,6 +1,7 @@
 ( function (global) {
 
 var clusterTileUrl = "snippets/cluster-tile.html";
+var testhtml = "snippets/menu-item.html";
 
 var insertHtml = function (selector, html) {
   var targetElem = document.querySelector(selector);
@@ -36,6 +37,7 @@ function loadClusterTiles(cluster_list)
 	for(var i=0; i<cluster_count; i++)
 	{
 		var cluster_name = clusters[i];
+		clusterTileUrl = testhtml;
 		console.log(clusterTileUrl);
 		$ajaxUtils.sendGetRequest(clusterTileUrl, 
 			function(clusterTileUrl)
