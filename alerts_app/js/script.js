@@ -18,7 +18,7 @@ function loadClustersInfo(request)
 	var clusters = ["Thunderbolt"];
 	var cluster_count = clusters.length;
 	
-	for( var int i=0; i<cluster_count; i++)
+	for( var i=0; i<cluster_count; i++)
 	{
 		$ajaxUtils.sendGetRequest(`data/${clusters[i]}.txt`, function(request)
 			{
