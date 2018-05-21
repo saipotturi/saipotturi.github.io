@@ -53,17 +53,17 @@ function loadClusterTiles(cluster_list)
 				var count = request.responseText.split(/\r\n|\r|\n/).length;
 				if(count > 1)
 				{
-					document.querySelector("`#${cluster_name}`").style.backgroundColor = "red";
+					document.querySelector(`"#${cluster_name}"`).style.backgroundColor = "red";
 				}
 				else if(count == 1)
 				{
-					document.querySelector("`#${cluster_name}`").style.backgroundColor = "yellow";
+					document.querySelector(`"#${cluster_name}"`).style.backgroundColor = "yellow";
 				}
 				else
 				{
-					document.querySelector("`#${cluster_name}`").style.backgroundColor = "green";
+					document.querySelector(`"#${cluster_name}"`).style.backgroundColor = "green";
 				}
-				document.querySelector("`#${cluster_name}`").querySelector("p").innerHTML = count;
+				document.querySelector(`"#${cluster_name}"`).querySelector("p").innerHTML = count;
 			});
 	}
 }
