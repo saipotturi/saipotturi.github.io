@@ -21,8 +21,8 @@ function loadClustersInfo(request)
 	for( var i=0; i<cluster_count; i++)
 	{
 		console.log(clusters[i]);
-		document.querySelector(`#${clusters[i]}`).style.backgroundColor = "red";
-		/*
+		//document.querySelector(`#${clusters[i]}`).style.backgroundColor = "red";
+		
 		$ajaxUtils.sendGetRequest(`data/${clusters[i]}.txt`, function(request)
 			{
 				var count = request.responseText.split(/\r\n|\r|\n/).length;
@@ -40,7 +40,7 @@ function loadClustersInfo(request)
 				}
 				document.querySelector(`${clusters[i]}`).querySelector("p").innerHTML = count;
 			}
-		); */
+		); 
 	}
 
 	
