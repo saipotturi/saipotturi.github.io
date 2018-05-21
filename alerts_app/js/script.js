@@ -33,6 +33,8 @@ function loadClusterTiles(cluster_list)
 	//var clusters = cluster_list.responseText.split(/\r\n|\r|\n/);
 	var cluster_count = clusters.length;
 
+	var titleHtml = insertProperty("<div id=\"{{cluster_variable}}\"", "cluster_variable", "Thunderbolt");
+	console.log(titleHtml);
 	console.log("hello");
 	
 	for(var i=0; i<cluster_count; i++)
