@@ -35,7 +35,7 @@ function loadClusterTiles(cluster_list)
 
 	var titleHtml = insertProperty("<div id=\"{{cluster_variable}}\"", "cluster_variable", "Thunderbolt");
 	console.log(titleHtml);
-	console.log("hello");
+	console.log(cluster_list.toString());
 	
 	for(var i=0; i<cluster_count; i++)
 	{
