@@ -40,8 +40,7 @@ function loadClusterTiles(cluster_list)
 	for(i=0; i<cluster_count; i++)
 	{
 		var cluster_name = clusters[i];
-		console.log(i);
-		console.log(cluster_name);
+
 		$ajaxUtils.sendGetRequest(clusterTileUrl, 
 			function(clusterTileUrl)
 			{
@@ -72,6 +71,8 @@ function loadClusterTiles(cluster_list)
 				}
 				document.querySelector(`"#${cluster_name}"`).querySelector("p").innerHTML = count;
 			});
+		console.log(i);
+		console.log(cluster_name);
 	}
 }
 
