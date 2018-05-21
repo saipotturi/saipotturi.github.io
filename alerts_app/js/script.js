@@ -22,6 +22,7 @@ function loadClustersInfo(request)
 	{
 		$ajaxUtils.sendGetRequest(`data/${clusters[i]}.txt`, function(request)
 			{
+				console.log(clusters[i]);
 				var count = request.responseText.split(/\r\n|\r|\n/).length;
 				if(count > 1)
 				{
