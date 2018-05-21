@@ -38,8 +38,6 @@ function loadClusterTiles(cluster_list)
 	{
 		var cluster_name = clusters[i];
 
-		console.log(cluster_name);
-
 		$ajaxUtils.sendGetRequest(clusterTileUrl, 
 			function(clusterTileUrl)
 			{
@@ -53,6 +51,8 @@ function loadClusterTiles(cluster_list)
 		$ajaxUtils.sendGetRequest(`data/${cluster_name}.txt`, function(request)
 			{
 				var count = request.responseText.split(/\r\n|\r|\n/).length;
+				if(cluster_name == "Thunderbolt")
+					console.log("YYYYYYYYYYYYYYYYYYY");
 				if(count > 1)
 				{
 					document.querySelector(`"#${cluster_name}"`).style.backgroundColor = "red";
