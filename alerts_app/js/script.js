@@ -22,23 +22,23 @@ function loadClustersInfo(request)
 	{
 		console.log(clusters[i]);
 		//document.querySelector(`#${clusters[i]}`).style.backgroundColor = "red";
-		
+		var cluster_name = clusters[i];
 		$ajaxUtils.sendGetRequest(`data/${clusters[i]}.txt`, function(request)
 			{
 				var count = request.responseText.split(/\r\n|\r|\n/).length;
 				if(count > 1)
 				{
-					document.querySelector(`${clusters[i]}`).style.backgroundColor = "red";
+					document.querySelector(`#${cluster_name}`).style.backgroundColor = "red";
 				}
 				else if(count == 1)
 				{
-					document.querySelector(`${clusters[i]}`).style.backgroundColor = "yellow";
+					document.querySelector(`#${cluster_name}`).style.backgroundColor = "yellow";
 				}
 				else
 				{
-					document.querySelector(`${clusters[i]}`).style.backgroundColor = "green";
+					document.querySelector(`#${cluster_name}`).style.backgroundColor = "green";
 				}
-				document.querySelector(`${clusters[i]}`).querySelector("p").innerHTML = count;
+				document.querySelector(`#${cluster_name}`).querySelector("p").innerHTML = count;
 			}
 		); 
 	}
