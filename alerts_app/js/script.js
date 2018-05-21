@@ -25,17 +25,17 @@ function loadClustersInfo(request)
 				var count = request.responseText.split(/\r\n|\r|\n/).length;
 				if(count > 1)
 				{
-					document.querySelector(`#${clusters[i]}`).style.backgroundColor = "red";
+					document.querySelector(`${clusters[i]}`).style.backgroundColor = "red";
 				}
 				else if(count == 1)
 				{
-					document.querySelector(`#${clusters[i]}`).style.backgroundColor = "yellow";
+					document.querySelector(`${clusters[i]}`).style.backgroundColor = "yellow";
 				}
 				else
 				{
-					document.querySelector(`#${clusters[i]}`).style.backgroundColor = "green";
+					document.querySelector(`${clusters[i]}`).style.backgroundColor = "green";
 				}
-				document.querySelector(`#${clusters[i]}`).querySelector("p").innerHTML = count;
+				document.querySelector(`${clusters[i]}`).querySelector("p").innerHTML = count;
 			}
 		);
 	}
