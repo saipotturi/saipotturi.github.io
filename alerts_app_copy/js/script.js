@@ -37,12 +37,10 @@ function loadClusterTiles(cluster_list)
 	console.log(clusters);
 	var cluster_count = clusters.length;
 	
-	var i;
-
-	for(i=0; i<cluster_count; i++)
+	for(var i=0; i<cluster_count; i++)
 	{
 		var cluster_name = clusters[i];
-
+		console.log("Hello : "+cluster_name)
 		$ajaxUtils.sendGetRequest(clusterTileUrl, 
 			function(clusterTileUrl)
 			{
