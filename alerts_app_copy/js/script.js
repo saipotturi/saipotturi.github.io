@@ -44,7 +44,7 @@ function loadClusterTiles(cluster_list)
 		$ajaxUtils.sendGetRequest(clusterTileUrl, 
 			function(clusterTileUrl)
 			{
-				request = clusterTileUrl;
+				var request = clusterTileUrl;
 				console.log(request.toString());
 				var tileHtml = insertProperty(request, "cluster_variable", cluster_name);
 				insertHtml(cluster_row, tileHtml);
