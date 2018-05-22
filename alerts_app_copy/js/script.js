@@ -54,6 +54,8 @@ function loadClusterTiles(cluster_list)
 		,false);
 
 		insertHtml("#cluster_row", aggr_html);	
+
+		document.querySelector(`#${cluster_name}`).style.backgroundColor = "red";
 	}
 
 	for(var i=0; i<cluster_count; i++)
@@ -66,7 +68,7 @@ function loadClusterTiles(cluster_list)
 	
 				if(count > 1)
 				{
-					document.querySelector(`"#${cluster_name}"`).style.backgroundColor = "red";
+					document.querySelector(`#${cluster_name}`).style.backgroundColor = "red";
 				}
 				else if(count == 1)
 				{
