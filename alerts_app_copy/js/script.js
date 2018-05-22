@@ -31,6 +31,60 @@ document.addEventListener("DOMContentLoaded",
 
 function loadClusterTiles(cluster_list)
 {
+	var clusters = ["Thunderbolt", "CM_tagging"];
+	//var clusters = ["CM_tagging"];
+	//var clusters = cluster_list.split(/\r\n|\r|\n/);
+	console.log(clusters);
+	var cluster_count = clusters.length;
+	
+	var aggr_html;
+
+	for(var i=0; i<cluster_count; i++)
+	{
+		var cluster_name = clusters[i];
+		$ajaxUtils.sendGetRequest(clusterTileUrl, 
+			function(clusterTileUrl)
+			{
+				var tileHtml = insertProperty(clusterTileUrl, "cluster_variable", cluster_name);
+
+				aggr_html = aggr_html + tileHtml;
+
+				console.log(tileHtml);
+			}
+		,false);
+
+		insertHtml("#cluster_row", aggr_html);	
+	}
+
+	for(var i=0; i<cluster_count; i++)
+	{
+		$ajaxUtils.sendGetRequest(`data/${cluster_name}.txt`, function(request)
+			{
+				console.log(request);
+				var count = request.split(/\r\n|\r|\n/).length;
+				console.log(cluster_name);
+	
+				if(count > 1)
+				{
+					document.querySelector(`#${cluster_name}`).style.backgroundColor = "red";
+				}
+				else if(count == 1)
+				{
+					document.querySelector(`#${cluster_name}`).style.backgroundColor = "yellow";
+				}
+				else
+				{
+					document.querySelector(`#${cluster_name}`).style.backgroundColor = "green";
+				}
+				document.querySelector(`#${cluster_name}`).querySelector("p").innerHTML = count;
+			}, false);
+		
+	}
+}
+
+/*
+function loadClusterTiles(cluster_list)
+{
 	//var clusters = ["Thunderbolt", "CM_tagging"];
 	var clusters = ["CM_tagging"];
 	//var clusters = cluster_list.split(/\r\n|\r|\n/);
@@ -40,7 +94,6 @@ function loadClusterTiles(cluster_list)
 	for(var i=0; i<cluster_count; i++)
 	{
 		var cluster_name = clusters[i];
-		console.log("Hello : "+cluster_name)
 		$ajaxUtils.sendGetRequest(clusterTileUrl, 
 			function(clusterTileUrl)
 			{
@@ -71,10 +124,11 @@ function loadClusterTiles(cluster_list)
 				}
 				document.querySelector(`#${cluster_name}`).querySelector("p").innerHTML = count;
 			}, false);
-		console.log(i);
-		console.log(cluster_name);
+		
 	}
 }
+
+*/
 
 /*
 function loadHealth(request)
