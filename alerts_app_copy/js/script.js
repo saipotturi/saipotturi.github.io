@@ -29,6 +29,8 @@ document.addEventListener("DOMContentLoaded",
 	}
 );
 
+/*
+
 function loadClusterTiles(cluster_list)
 {
 	//var clusters = ["Thunderbolt", "CM_tagging"];
@@ -55,7 +57,6 @@ function loadClusterTiles(cluster_list)
 
 		insertHtml("#cluster_row", aggr_html);
 
-		console.log(document.body());	
 	}
 
 	for(var i=0; i<cluster_count; i++)
@@ -84,7 +85,9 @@ function loadClusterTiles(cluster_list)
 	}
 }
 
-/*
+*/
+
+
 function loadClusterTiles(cluster_list)
 {
 	//var clusters = ["Thunderbolt", "CM_tagging"];
@@ -92,6 +95,8 @@ function loadClusterTiles(cluster_list)
 	//var clusters = cluster_list.split(/\r\n|\r|\n/);
 	console.log(clusters);
 	var cluster_count = clusters.length;
+
+	var aggr_html = "";
 	
 	for(var i=0; i<cluster_count; i++)
 	{
@@ -101,7 +106,12 @@ function loadClusterTiles(cluster_list)
 			{
 				var tileHtml = insertProperty(clusterTileUrl, "cluster_variable", cluster_name);
 				console.log(tileHtml);
-				insertHtml("#cluster_row", tileHtml);
+
+				aggr_html += tileHtml;
+
+				//insertHtml("#cluster_row", tileHtml);
+
+				insertHtml("#cluster_row", aggr_html);
 			}
 		,false);
 
@@ -130,7 +140,7 @@ function loadClusterTiles(cluster_list)
 	}
 }
 
-*/
+
 
 /*
 function loadHealth(request)
