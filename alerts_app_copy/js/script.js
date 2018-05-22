@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded",
 	function (event) {
 
 		$ajaxUtils.sendGetRequest("data/cluster_list", 
-			loadClusterTiles);
+			loadClusterTiles, false);
 
 	//	$ajaxUtils.sendGetRequest("data/Thunderbolt.txt", 
 	//		loadHealth);
