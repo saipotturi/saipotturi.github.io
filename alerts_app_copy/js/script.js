@@ -4,6 +4,7 @@ var clusterTileUrl = "snippets/cluster-tile.html";
 var testhtml = "snippets/menu-item.html";
 
 var insertHtml = function (selector, html) {
+  console.log(selector);		
   var targetElem = document.querySelector(selector);
   targetElem.innerHTML = html;
 };
