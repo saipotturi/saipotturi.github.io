@@ -37,7 +37,7 @@ function loadClusterTiles(cluster_list)
 	console.log(clusters);
 	var cluster_count = clusters.length;
 	
-	var aggr_html = null;
+	var aggr_html = "";
 
 	for(var i=0; i<cluster_count; i++)
 	{
