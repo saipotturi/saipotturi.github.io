@@ -66,7 +66,7 @@ function loadClusterTiles(cluster_list)
 	
 				if(count > 1)
 				{
-					document.querySelector(`#${cluster_name}`).style.backgroundColor = "red";
+					document.querySelector(`#"${cluster_name}"`).style.backgroundColor = "red";
 				}
 				else if(count == 1)
 				{
