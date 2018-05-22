@@ -45,8 +45,8 @@ function loadClusterTiles(cluster_list)
 			function(clusterTileUrl)
 			{
 				var request = clusterTileUrl;
-				console.log(request.toString());
 				var tileHtml = insertProperty(request, "cluster_variable", cluster_name);
+				console.log(tileHtml);
 				insertHtml(cluster_row, tileHtml);
 			}
 		,false);
