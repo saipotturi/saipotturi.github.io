@@ -71,7 +71,7 @@ function loadClusterTiles(cluster_list)
 					document.querySelector(`#${cluster_name}`).style.backgroundColor = "green";
 				}
 				document.querySelector(`#${cluster_name}`).querySelector("p").innerHTML = count;
-			});
+			}, false);
 		console.log(i);
 		console.log(cluster_name);
 	}

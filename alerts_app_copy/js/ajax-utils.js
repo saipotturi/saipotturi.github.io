@@ -46,7 +46,7 @@ function handleResponse(request,
 
     // Default to isJsonResponse = true
     if (isJsonResponse == undefined) {
-      isJsonResponse = false;
+      isJsonResponse = true;
     }
 
     if (isJsonResponse) {
