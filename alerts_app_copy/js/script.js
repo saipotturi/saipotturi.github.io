@@ -53,9 +53,9 @@ function loadClusterTiles(cluster_list)
 			}
 		,false);
 
-		insertHtml("#cluster_row", aggr_html);	
+		insertHtml("#cluster_row", aggr_html);
 
-		document.querySelector(`#${cluster_name}`).style.backgroundColor = "red";
+		console.log(document.body());	
 	}
 
 	for(var i=0; i<cluster_count; i++)
