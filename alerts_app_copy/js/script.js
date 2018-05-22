@@ -32,8 +32,9 @@ document.addEventListener("DOMContentLoaded",
 function loadClusterTiles(cluster_list)
 {
 	//var clusters = ["Thunderbolt", "CM_tagging"];
-	var clusters = ["Thunderbolt"];
-	//var clusters = cluster_list.responseText.split(/\r\n|\r|\n/);
+	//var clusters = ["Thunderbolt"];
+	var clusters = cluster_list.split(/\r\n|\r|\n/);
+	console.log(clusters);
 	var cluster_count = clusters.length;
 	
 	var i;
@@ -45,8 +46,7 @@ function loadClusterTiles(cluster_list)
 		$ajaxUtils.sendGetRequest(clusterTileUrl, 
 			function(clusterTileUrl)
 			{
-				var request = clusterTileUrl;
-				var tileHtml = insertProperty(request, "cluster_variable", cluster_name);
+				var tileHtml = insertProperty(clusterTileUrl, "cluster_variable", cluster_name);
 				console.log(tileHtml);
 				insertHtml("#cluster_row", tileHtml);
 			}
