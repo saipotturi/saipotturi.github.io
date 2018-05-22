@@ -49,7 +49,7 @@ function loadClusterTiles(cluster_list)
 
 				aggr_html = aggr_html + tileHtml;
 
-				console.log(tileHtml);
+				console.log(aggr_html);
 			}
 		,false);
 
