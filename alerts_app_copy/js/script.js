@@ -121,31 +121,30 @@ function loadClusterTiles(cluster_list)
 		,false);
 
 	
-		$ajaxUtils.sendGetRequest(`data/${cluster_name}.txt`, function(request)
+		$ajaxUtils.sendGetRequest(`data/${clusters[i]}.txt`, function(request)
 			{
 				console.log(request);
 				var count = request.split(/\r\n|\r|\n/).length;
 				
-				console.log(cluster_name);
-				if(cluster_name == "Thunderbolt")
-					console.log("YYYYYYYYYYYYYYYYYYY");
+				console.log(clusters[i]);
+
 				if(count > 1)
 				{
 					console.log("nee count red : "+count);
-					document.querySelector(`#${cluster_name}`).style.backgroundColor = "red";
+					document.querySelector(`#${clusters[i]}`).style.backgroundColor = "red";
 				}
 				else if(count == 1)
 				{
 					console.log("nee count yellow : "+count);
-					document.querySelector(`#${cluster_name}`).style.backgroundColor = "yellow";
+					document.querySelector(`#${clusters[i]}`).style.backgroundColor = "yellow";
 				}
 				else
 				{
-					document.querySelector(`#${cluster_name}`).style.backgroundColor = "green";
+					document.querySelector(`#${clusters[i]}`).style.backgroundColor = "green";
 				}
-				document.querySelector(`#${cluster_name}`).querySelector("p").innerHTML = count;
+				document.querySelector(`#${clusters[i]}`).querySelector("p").innerHTML = count;
 			}, false);
-				
+
 	}
 }
 
