@@ -108,9 +108,10 @@ function loadClusterTiles(cluster_list)
 			{
 				var tileHtml = insertProperty(clusterTileUrl, "cluster_variable", cluster_name);
 				console.log(cluster_name);
-				console.log(aggr_html);
 
 				aggr_html += tileHtml;
+				console.log(aggr_html);
+
 
 				//insertHtml("#cluster_row", tileHtml);
 
