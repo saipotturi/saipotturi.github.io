@@ -131,7 +131,7 @@ function loadClusterTiles(cluster_list)
 				if(count > 1)
 				{
 					console.log("nee count red : "+count);
-					document.querySelector("#CM_tagging").style.backgroundColor = "red";
+					document.querySelector("#{cluster_name}").style.backgroundColor = "red";
 				}
 				else if(count == 1)
 				{
