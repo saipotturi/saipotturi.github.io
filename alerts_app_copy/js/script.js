@@ -102,8 +102,7 @@ function loadClusterTiles(cluster_list)
 	for(var i=0; i<cluster_count; i++)
 	{
 		//var cluster_name = clusters[i];
-		console.log(clusters[i]);
-		$ajaxUtils.sendGetRequest(clusterTileUrl, 
+		await $ajaxUtils.sendGetRequest(clusterTileUrl, 
 			function(clusterTileUrl)
 			{
 				var tileHtml = insertProperty(clusterTileUrl, "cluster_variable", clusters[i]);
@@ -123,7 +122,7 @@ function loadClusterTiles(cluster_list)
     
 	for(var i=0; i<cluster_count; i++)
 	{
-		$ajaxUtils.sendGetRequest(`data/${clusters[i]}.txt`, function(request)
+		await $ajaxUtils.sendGetRequest(`data/${clusters[i]}.txt`, function(request)
 			{
 				console.log(request);
 				var count = request.split(/\r\n|\r|\n/).length;
