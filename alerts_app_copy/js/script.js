@@ -89,7 +89,7 @@ function loadClusterTiles(cluster_list)
 */
 
 
-function loadClusterTiles(cluster_list)
+async function loadClusterTiles(cluster_list)
 {
 	var clusters = ["Thunderbolt", "CM_tagging"];
 	//var clusters = ["CM_tagging"];
