@@ -123,6 +123,7 @@ function loadClusterTiles(cluster_list)
 			{
 				console.log(request);
 				var count = request.split(/\r\n|\r|\n/).length;
+				console.log("nee count : "+count);
 				console.log(cluster_name);
 				if(cluster_name == "Thunderbolt")
 					console.log("YYYYYYYYYYYYYYYYYYY");
