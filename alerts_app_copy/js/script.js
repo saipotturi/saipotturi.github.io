@@ -117,36 +117,10 @@ function loadClusterTiles(cluster_list)
 
 				insertHtml("#cluster_row", aggr_html);
 
-				$ajaxUtils.sendGetRequest(`data/${clusters[i]}.txt`, function(request)
-				{
-					console.log(request);
-					var count = request.split(/\r\n|\r|\n/).length;
-				
-					console.log(clusters[i]);
-					if(clusters[i] == "Thunderbolt")
-						console.log("YYYYYYYYYYYYYYYYYYY");
-					if(count > 1)
-					{
-						console.log("nee count red : "+count);
-						document.querySelector(`#${clusters[i]}`).style.backgroundColor = "red";
-					}
-					else if(count == 1)
-					{
-						console.log("nee count yellow : "+count);
-						document.querySelector(`#${clusters[i]}`).style.backgroundColor = "yellow";
-					}
-					else
-					{
-						document.querySelector(`#${cluster_name}`).style.backgroundColor = "green";
-					}
-					document.querySelector(`#${clusters[i]}`).querySelector("p").innerHTML = count;
-				}, false);
-
-
 			}
 		,false);
 
-	/*
+	
 		$ajaxUtils.sendGetRequest(`data/${cluster_name}.txt`, function(request)
 			{
 				console.log(request);
@@ -171,7 +145,7 @@ function loadClusterTiles(cluster_list)
 				}
 				document.querySelector(`#${cluster_name}`).querySelector("p").innerHTML = count;
 			}, false);
-	*/	
+				
 	}
 }
 
