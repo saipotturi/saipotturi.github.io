@@ -118,7 +118,7 @@ function loadClusterTiles(cluster_list)
 			}
 		,false);
 
-/*
+
 		$ajaxUtils.sendGetRequest(`data/${cluster_name}.txt`, function(request)
 			{
 				console.log(request);
@@ -140,7 +140,7 @@ function loadClusterTiles(cluster_list)
 				}
 				document.querySelector(`#${cluster_name}`).querySelector("p").innerHTML = count;
 			}, false);
-*/		
+		
 	}
 }
 
