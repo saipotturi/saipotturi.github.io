@@ -119,8 +119,10 @@ function loadClusterTiles(cluster_list)
 
 			}
 		,false);
-
-	
+    }
+    
+	for(var i=0; i<cluster_count; i++)
+	{
 		$ajaxUtils.sendGetRequest(`data/${clusters[i]}.txt`, function(request)
 			{
 				console.log(request);
