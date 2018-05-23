@@ -124,16 +124,18 @@ function loadClusterTiles(cluster_list)
 			{
 				console.log(request);
 				var count = request.split(/\r\n|\r|\n/).length;
-				console.log("nee count : "+count);
+				
 				console.log(cluster_name);
 				if(cluster_name == "Thunderbolt")
 					console.log("YYYYYYYYYYYYYYYYYYY");
 				if(count > 1)
 				{
+					console.log("nee count red : "+count);
 					document.querySelector("#CM_tagging").style.backgroundColor = "red";
 				}
 				else if(count == 1)
 				{
+					console.log("nee count yellow : "+count);
 					document.querySelector(`#${cluster_name}`).style.backgroundColor = "yellow";
 				}
 				else
