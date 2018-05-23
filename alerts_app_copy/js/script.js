@@ -116,6 +116,7 @@ function loadClusterTiles(cluster_list)
 			}
 		,false);
 
+		console.log(aggr_html);
 		insertHtml("#cluster_row", aggr_html);
 /*
 		$ajaxUtils.sendGetRequest(`data/${cluster_name}.txt`, function(request)
