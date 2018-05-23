@@ -89,7 +89,7 @@ function loadClusterTiles(cluster_list)
 */
 
 
-async function loadClusterTiles(cluster_list)
+function loadClusterTiles(cluster_list)
 {
 	var clusters = ["Thunderbolt", "CM_tagging"];
 	//var clusters = ["CM_tagging"];
@@ -102,7 +102,7 @@ async function loadClusterTiles(cluster_list)
 	for(var i=0; i<cluster_count; i++)
 	{
 		//var cluster_name = clusters[i];
-		await $ajaxUtils.sendGetRequest(clusterTileUrl, 
+		$ajaxUtils.sendGetRequest(clusterTileUrl, 
 			function(clusterTileUrl)
 			{
 				var tileHtml = insertProperty(clusterTileUrl, "cluster_variable", clusters[i]);
@@ -122,7 +122,7 @@ async function loadClusterTiles(cluster_list)
     
 	for(var i=0; i<cluster_count; i++)
 	{
-		await $ajaxUtils.sendGetRequest(`data/${clusters[i]}.txt`, function(request)
+		$ajaxUtils.sendGetRequest(`data/${clusters[i]}.txt`, function(request)
 			{
 				console.log(request);
 				var count = request.split(/\r\n|\r|\n/).length;
@@ -174,3 +174,6 @@ function loadHealth(request)
 */
 
 })(window);
+
+
+//https://stackoverflow.com/questions/12359450/javascript-loop-and-wait-for-function
