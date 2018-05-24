@@ -103,7 +103,7 @@ function loadClusterTiles(cluster_list)
 
 	var index = 0;
 
-	function test_async()
+	function test_async(callback)
 	{
 		if(index < clusters.length)
 		{
@@ -134,11 +134,12 @@ function loadClusterTiles(cluster_list)
 		else
 		{
 			index = 0;
-			test_async_2();
+			callback();
 		}
+	
 	}
 
-	test_async();
+	test_async(test_async_2);
 
 
 	function test_async_2()
