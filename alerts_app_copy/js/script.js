@@ -98,6 +98,69 @@ function loadClusterTiles(cluster_list)
 	var cluster_count = clusters.length;
 
 	var aggr_html = "";
+
+//*********************
+
+	var index = 0;
+
+	function test_async()
+	{
+		if(index < cluster_list.length)
+		{
+			$ajaxUtils.sendGetRequest(clusterTileUrl, 
+			function(clusterTileUrl)
+			{
+				var tileHtml = insertProperty(clusterTileUrl, "cluster_variable", clusters[index]);
+				console.log(clusters[i]);
+
+				aggr_html += tileHtml;
+				console.log(aggr_html);
+
+
+				//insertHtml("#cluster_row", tileHtml);
+
+				insertHtml("#cluster_row", aggr_html);
+
+			}
+		,false);
+
+			$ajaxUtils.sendGetRequest(`data/${clusters[i]}.txt`, function(request)
+			{
+				console.log(request);
+				var count = request.split(/\r\n|\r|\n/).length;
+				
+				console.log(clusters[i]);
+
+				if(count > 1)
+				{
+					console.log("nee count red : "+count);
+					document.querySelector(`#${clusters[i]}`).style.backgroundColor = "red";
+				}
+				else if(count == 1)
+				{
+					console.log("nee count yellow : "+count);
+					document.querySelector(`#${clusters[i]}`).style.backgroundColor = "yellow";
+				}
+				else
+				{
+					document.querySelector(`#${clusters[i]}`).style.backgroundColor = "green";
+				}
+				document.querySelector(`#${clusters[i]}`).querySelector("p").innerHTML = count;
+			}, false);
+
+
+			index++;
+
+			test_async();
+		}
+	}
+
+	test_async();
+
+//****************************
+
+/*
+
 	
 	for(var i=0; i<cluster_count; i++)
 	{
@@ -147,6 +210,8 @@ function loadClusterTiles(cluster_list)
 			}, false);
 
 	}
+*/
+
 }
 
 
