@@ -105,13 +105,16 @@ function loadClusterTiles(cluster_list)
 
 	function test_async()
 	{
-		if(index < cluster_list.length)
+		if(index < clusters.length)
 		{
+
+			var cluster_name = clusters[index];
+
 			$ajaxUtils.sendGetRequest(clusterTileUrl, 
 			function(clusterTileUrl)
 			{
-				var tileHtml = insertProperty(clusterTileUrl, "cluster_variable", clusters[index]);
-				console.log(clusters[index]);
+				var tileHtml = insertProperty(clusterTileUrl, "cluster_variable", cluster_name);
+				console.log(cluster_name);
 
 				aggr_html += tileHtml;
 				console.log(aggr_html);
@@ -124,28 +127,28 @@ function loadClusterTiles(cluster_list)
 			}
 		,false);
 
-			$ajaxUtils.sendGetRequest(`data/${clusters[index]}.txt`, function(request)
+			$ajaxUtils.sendGetRequest(`data/${cluster_name}.txt`, function(request)
 			{
 				console.log(request);
 				var count = request.split(/\r\n|\r|\n/).length;
 				
-				console.log(clusters[i]);
+				console.log(cluster_name);
 
 				if(count > 1)
 				{
 					console.log("nee count red : "+count);
-					document.querySelector(`#${clusters[index]}`).style.backgroundColor = "red";
+					document.querySelector(`#${cluster_name}`).style.backgroundColor = "red";
 				}
 				else if(count == 1)
 				{
 					console.log("nee count yellow : "+count);
-					document.querySelector(`#${clusters[index]}`).style.backgroundColor = "yellow";
+					document.querySelector(`#${cluster_name}`).style.backgroundColor = "yellow";
 				}
 				else
 				{
-					document.querySelector(`#${clusters[index]}`).style.backgroundColor = "green";
+					document.querySelector(`#${cluster_name}`).style.backgroundColor = "green";
 				}
-				document.querySelector(`#${clusters[index]}`).querySelector("p").innerHTML = count;
+				document.querySelector(`#${cluster_name}`).querySelector("p").innerHTML = count;
 			}, false);
 
 
