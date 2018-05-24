@@ -131,12 +131,15 @@ function loadClusterTiles(cluster_list)
 
 			test_async();
 		}
+		else
+		{
+			index = 0;
+			test_async_2();
+		}
 	}
 
 	test_async();
 
-
-	index = 0;
 
 	function test_async_2()
 	{
@@ -174,8 +177,6 @@ function loadClusterTiles(cluster_list)
 
 		}
 	}
-
-	test_async_2();
 
 //****************************
 
