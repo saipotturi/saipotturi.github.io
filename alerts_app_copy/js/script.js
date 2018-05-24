@@ -139,8 +139,6 @@ function loadClusterTiles(cluster_list)
 	
 	}
 
-	test_async(test_async_2);
-
 
 	function test_async_2()
 	{
@@ -178,6 +176,8 @@ function loadClusterTiles(cluster_list)
 
 		}
 	}
+
+	test_async(test_async_2);
 
 //****************************
 
