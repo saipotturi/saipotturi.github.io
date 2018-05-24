@@ -133,7 +133,7 @@ function loadClusterTiles(cluster_list)
 			test_async();
 		}
 	
-		callback;
+		callback();
 	
 	}
 
