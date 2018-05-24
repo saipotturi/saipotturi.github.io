@@ -131,11 +131,8 @@ function loadClusterTiles(cluster_list)
 
 			test_async();
 		}
-		else
-		{
-			index = 0;
-			callback();
-		}
+	
+		callback();
 	
 	}
 
