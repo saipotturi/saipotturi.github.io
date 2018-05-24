@@ -127,6 +127,23 @@ function loadClusterTiles(cluster_list)
 			}
 		,false);
 
+			index++;
+
+			test_async();
+		}
+	}
+
+	test_async();
+
+
+	index = 0;
+
+	function test_async_2()
+	{
+		if(index < clusters.length)
+		{
+			var cluster_name = clusters[index];
+
 			$ajaxUtils.sendGetRequest(`data/${cluster_name}.txt`, function(request)
 			{
 				console.log(request);
@@ -151,14 +168,14 @@ function loadClusterTiles(cluster_list)
 				document.querySelector(`#${cluster_name}`).querySelector("p").innerHTML = count;
 			}, false);
 
-
 			index++;
 
-			test_async();
+			test_async_2();
+
 		}
 	}
 
-	test_async();
+	test_async_2();
 
 //****************************
 
