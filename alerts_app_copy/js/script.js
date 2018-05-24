@@ -105,6 +105,7 @@ function loadClusterTiles(cluster_list)
 
 	function test_async(callback)
 	{
+		console.log(callback);
 		if(index < clusters.length)
 		{
 
