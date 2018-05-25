@@ -110,7 +110,7 @@ function appnd_func(cluster_name)
 				console.log(tileHtml);
 
 
-				insertHtml("#cluster_row", tileHtml);
+				//insertHtml("#cluster_row", tileHtml);
 
 
 				appendtHtml("#cluster_row", tileHtml);
