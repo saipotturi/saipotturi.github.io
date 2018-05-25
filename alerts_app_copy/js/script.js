@@ -9,6 +9,12 @@ var insertHtml = function (selector, html) {
   targetElem.innerHTML = html;
 };
 
+var appendtHtml = function (selector, html) {
+  console.log(html);
+  var targetElem = document.querySelector(selector);
+  targetElem.innerHTML += html;
+};
+
 var insertProperty = function (string, propName, propValue) {
   var propToReplace = "{{" + propName + "}}";
   string = string
@@ -87,6 +93,74 @@ function loadClusterTiles(cluster_list)
 }
 
 */
+
+//************ Create the 2 new functions here **************//
+
+
+function appnd_func(cluster_name)
+{
+	return new Promise(function(resolve, reject)
+	{
+		$ajaxUtils.sendGetRequest(clusterTileUrl, 
+			function(clusterTileUrl)
+			{
+				var tileHtml = insertProperty(clusterTileUrl, "cluster_variable", cluster_name);
+				console.log(cluster_name);
+
+				console.log(tileHtml);
+
+
+				//insertHtml("#cluster_row", tileHtml);
+
+				appendHtml("#cluster_row", tileHtml);
+
+			}
+		,false);
+
+		resolve(null);
+	}
+	)
+	
+	
+
+}
+
+
+function status_func(cluster_name)
+{
+	return new Promise(function(resolve, reject)
+	{
+		$ajaxUtils.sendGetRequest(`data/${cluster_name}.txt`, function(request)
+			{
+				console.log(request);
+				var count = request.split(/\r\n|\r|\n/).length;
+				
+				console.log(cluster_name);
+
+				if(count > 1)
+				{
+					console.log("nee count red : "+count);
+					document.querySelector(`#${cluster_name}`).style.backgroundColor = "red";
+				}
+				else if(count == 1)
+				{
+					console.log("nee count yellow : "+count);
+					document.querySelector(`#${cluster_name}`).style.backgroundColor = "yellow";
+				}
+				else
+				{
+					document.querySelector(`#${cluster_name}`).style.backgroundColor = "green";
+				}
+				document.querySelector(`#${cluster_name}`).querySelector("p").innerHTML = count;
+			}, false);
+		
+		resolve(null);
+	}
+	)
+	
+}
+
+//**********************************************************//
 
 
 async function loadClusterTiles(cluster_list)
@@ -181,11 +255,26 @@ async function loadClusterTiles(cluster_list)
 //****************************
 
 
+//************ Promise **************//
+
+
+	for(var i=0; i<cluster_count; i++)
+	{
+		await appnd_func(clusters[i]);
+
+		await status_func(clusters[i]);
+	}
+
+
+//************ Promise **************//
+
+
+/*
 	
 	for(var i=0; i<cluster_count; i++)
 	{
 		//var cluster_name = clusters[i];
-		await $ajaxUtils.sendGetRequest(clusterTileUrl, 
+		$ajaxUtils.sendGetRequest(clusterTileUrl, 
 			function(clusterTileUrl)
 			{
 				var tileHtml = insertProperty(clusterTileUrl, "cluster_variable", clusters[i]);
@@ -205,7 +294,7 @@ async function loadClusterTiles(cluster_list)
     
 	for(var i=0; i<cluster_count; i++)
 	{
-		await $ajaxUtils.sendGetRequest(`data/${clusters[i]}.txt`, function(request)
+		$ajaxUtils.sendGetRequest(`data/${clusters[i]}.txt`, function(request)
 			{
 				console.log(request);
 				var count = request.split(/\r\n|\r|\n/).length;
@@ -230,6 +319,8 @@ async function loadClusterTiles(cluster_list)
 			}, false);
 
 	}
+
+*/	
 
 }
 
