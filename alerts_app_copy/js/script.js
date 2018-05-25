@@ -6,7 +6,7 @@ var testhtml = "snippets/menu-item.html";
 var insertHtml = function (selector, html) {
   console.log(html);
   var targetElem = document.querySelector(selector);
-  targetElem.innerHTML += html;
+  targetElem.innerHTML = html;
 };
 
 var appendtHtml = function (selector, html) {
@@ -113,7 +113,7 @@ function appnd_func(cluster_name)
 				insertHtml("#cluster_row", tileHtml);
 
 
-				//appendHtml("#cluster_row", tileHtml);
+				appendtHtml("#cluster_row", tileHtml);
 
 			}
 		,false);
