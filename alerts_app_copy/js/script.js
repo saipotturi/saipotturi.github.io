@@ -112,6 +112,8 @@ function appnd_func(cluster_name)
 
 				insertHtml("#cluster_row", tileHtml);
 
+				status_func(cluster_name);
+
 				//appendHtml("#cluster_row", tileHtml);
 
 			}
@@ -262,7 +264,7 @@ async function loadClusterTiles(cluster_list)
 	{
 		await appnd_func(clusters[i]);
 
-		await status_func(clusters[i]);
+		//await status_func(clusters[i]);
 	}
 
 
