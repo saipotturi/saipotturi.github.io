@@ -3,13 +3,13 @@
 var clusterTileUrl = "snippets/cluster-tile.html";
 var testhtml = "snippets/menu-item.html";
 
-var appendHtml = function (selector, html) {
+var insertHtml = function (selector, html) {
   console.log(html);
   var targetElem = document.querySelector(selector);
   targetElem.innerHTML += html;
 };
 
-var insertHtml = function (selector, html) {
+var appendHtml = function (selector, html) {
   console.log(html);
   var targetElem = document.querySelector(selector);
   targetElem.innerHTML += html;
@@ -110,10 +110,10 @@ function appnd_func(cluster_name)
 				console.log(tileHtml);
 
 
-				//insertHtml("#cluster_row", tileHtml);
+				insertHtml("#cluster_row", tileHtml);
 
 
-				appendHtml("#cluster_row", tileHtml);
+				//appendHtml("#cluster_row", tileHtml);
 
 			}
 		,false);
