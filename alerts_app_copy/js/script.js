@@ -89,7 +89,7 @@ function loadClusterTiles(cluster_list)
 */
 
 
-function loadClusterTiles(cluster_list)
+async function loadClusterTiles(cluster_list)
 {
 	var clusters = ["Thunderbolt", "CM_tagging"];
 	//var clusters = ["CM_tagging"];
@@ -100,7 +100,7 @@ function loadClusterTiles(cluster_list)
 	var aggr_html = "";
 
 //*********************
-
+/*
 	var index = 0;
 
 	function test_async(callback)
@@ -176,16 +176,16 @@ function loadClusterTiles(cluster_list)
 	}
 
 	test_async(test_async_2);
+*/	
 
 //****************************
 
-/*
 
 	
 	for(var i=0; i<cluster_count; i++)
 	{
 		//var cluster_name = clusters[i];
-		$ajaxUtils.sendGetRequest(clusterTileUrl, 
+		await $ajaxUtils.sendGetRequest(clusterTileUrl, 
 			function(clusterTileUrl)
 			{
 				var tileHtml = insertProperty(clusterTileUrl, "cluster_variable", clusters[i]);
@@ -205,7 +205,7 @@ function loadClusterTiles(cluster_list)
     
 	for(var i=0; i<cluster_count; i++)
 	{
-		$ajaxUtils.sendGetRequest(`data/${clusters[i]}.txt`, function(request)
+		await $ajaxUtils.sendGetRequest(`data/${clusters[i]}.txt`, function(request)
 			{
 				console.log(request);
 				var count = request.split(/\r\n|\r|\n/).length;
@@ -230,7 +230,6 @@ function loadClusterTiles(cluster_list)
 			}, false);
 
 	}
-*/
 
 }
 
