@@ -97,7 +97,7 @@ function loadClusterTiles(cluster_list)
 //************ Create the 2 new functions here **************//
 
 
-async function appnd_func(cluster_name)
+function appnd_func(cluster_name)
 {
 	return new Promise(function(resolve, reject)
 	{
@@ -118,7 +118,7 @@ async function appnd_func(cluster_name)
 			}
 		,false);
 
-		await status_func(cluster_name);
+		status_func(cluster_name);
 
 		resolve(null);
 	}
