@@ -97,7 +97,7 @@ function loadClusterTiles(cluster_list)
 //************ Create the 2 new functions here **************//
 
 
-function appnd_func(cluster_name)
+async function appnd_func(cluster_name)
 {
 	return new Promise(function(resolve, reject)
 	{
@@ -112,12 +112,13 @@ function appnd_func(cluster_name)
 
 				insertHtml("#cluster_row", tileHtml);
 
-				status_func(cluster_name);
 
 				//appendHtml("#cluster_row", tileHtml);
 
 			}
 		,false);
+
+		await status_func(cluster_name);
 
 		resolve(null);
 	}
