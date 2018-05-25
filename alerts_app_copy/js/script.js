@@ -6,7 +6,7 @@ var testhtml = "snippets/menu-item.html";
 var insertHtml = function (selector, html) {
   console.log(html);
   var targetElem = document.querySelector(selector);
-  targetElem.innerHTML += html;
+  targetElem.innerHTML = html;
 };
 
 var appendtHtml = function (selector, html) {
