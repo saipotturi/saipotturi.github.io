@@ -115,8 +115,6 @@ function appnd_func(cluster_name)
 				status_func(cluster_name);
 
 
-				//appendHtml("#cluster_row", tileHtml);
-
 			}
 		,false);
 
@@ -357,3 +355,4 @@ function loadHealth(request)
 
 
 //https://stackoverflow.com/questions/12359450/javascript-loop-and-wait-for-function
+//https://codeburst.io/javascript-promises-explained-with-simple-real-life-analogies-dd6908092138
