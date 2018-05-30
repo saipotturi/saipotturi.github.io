@@ -112,13 +112,15 @@ function appnd_func(cluster_name)
 
 				insertHtml("#cluster_row", tileHtml);
 
+				status_func(cluster_name);
+
 
 				//appendHtml("#cluster_row", tileHtml);
 
 			}
 		,false);
 
-		status_func(cluster_name);
+		//status_func(cluster_name);
 
 		resolve(null);
 	}
