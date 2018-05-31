@@ -164,11 +164,12 @@ function status_func(cluster_name)
 
 				document.querySelector(`#${cluster_name}`).onmouseover = function() { 
 					document.querySelector(`#${cluster_name}`).querySelector("#popup").style.display = 'block';
+				};
 
 				document.querySelector(`#${cluster_name}`).onmouseout = function() { 
 					document.querySelector(`#${cluster_name}`).querySelector("#popup").style.display = 'none';
-
 				};
+
 
 			}, false);
 
