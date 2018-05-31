@@ -1,6 +1,7 @@
 ( function (global) {
 
 var clusterTileUrl = "snippets/cluster-tile.html";
+var popupUrl = "snippets/popup.html";
 var testhtml = "snippets/menu-item.html";
 
 var insertHtml = function (selector, html) {
@@ -35,6 +36,9 @@ document.addEventListener("DOMContentLoaded",
 
 	}
 );
+
+
+
 
 /*
 
@@ -154,14 +158,21 @@ function status_func(cluster_name)
 				{
 					document.querySelector(`#${cluster_name}`).querySelector("#inner_box").style.backgroundColor = "green";
 				}
+
 				document.querySelector(`#${cluster_name}`).querySelector("#inner_box").querySelector("p").innerHTML = count;
+
+				document.querySelector(`#${cluster_name}`).querySelector("#popup").querySelector("p").innerHTML = request;
+
 			}, false);
+
 
 		resolve(null);
 	}
 	)
 	
 }
+
+
 
 //**********************************************************//
 
