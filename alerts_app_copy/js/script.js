@@ -143,18 +143,18 @@ function status_func(cluster_name)
 				if(count > 1)
 				{
 					console.log("nee count red : "+count);
-					document.querySelector(`#${cluster_name}`).style.backgroundColor = "red";
+					document.querySelector(`#${cluster_name}`).querySelector("#inner_box").style.backgroundColor = "red";
 				}
 				else if(count == 1)
 				{
 					console.log("nee count yellow : "+count);
-					document.querySelector(`#${cluster_name}`).style.backgroundColor = "yellow";
+					document.querySelector(`#${cluster_name}`).querySelector("#inner_box").style.backgroundColor = "yellow";
 				}
 				else
 				{
-					document.querySelector(`#${cluster_name}`).style.backgroundColor = "green";
+					document.querySelector(`#${cluster_name}`).querySelector("#inner_box").style.backgroundColor = "green";
 				}
-				document.querySelector(`#${cluster_name}`).querySelector("p").innerHTML = count;
+				document.querySelector(`#${cluster_name}`).querySelector("#inner_box").querySelector("p").innerHTML = count;
 			}, false);
 
 		resolve(null);
