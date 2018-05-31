@@ -122,7 +122,6 @@ function appnd_func(cluster_name)
 			}
 		,false);
 
-		//status_func(cluster_name);
 
 		resolve(null);
 	}
@@ -162,6 +161,14 @@ function status_func(cluster_name)
 				document.querySelector(`#${cluster_name}`).querySelector("#inner_box").querySelector("p").innerHTML = count;
 
 				document.querySelector(`#${cluster_name}`).querySelector("#popup").querySelector("p").innerHTML = request;
+
+				document.querySelector(`#${cluster_name}`).onmouseover = function() { 
+					document.querySelector(`#${cluster_name}`).querySelector("#popup").style.display = 'block';
+
+				document.querySelector(`#${cluster_name}`).onmouseout = function() { 
+					document.querySelector(`#${cluster_name}`).querySelector("#popup").style.display = 'none';
+
+				};
 
 			}, false);
 
