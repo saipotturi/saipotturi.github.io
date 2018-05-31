@@ -159,9 +159,9 @@ function status_func(cluster_name)
 					document.querySelector(`#${cluster_name}`).querySelector("#inner_box").style.backgroundColor = "green";
 				}
 
-				document.querySelector(`#${cluster_name}`).querySelector("#inner_box").querySelector("p").innerHTML = count;
+				document.querySelector(`#${cluster_name}`).querySelector("#inner_box").querySelector("p").innerHTML = request;
 
-				document.querySelector(`#${cluster_name}`).querySelector("#popup").querySelector("p").innerHTML = request;
+				//document.querySelector(`#${cluster_name}`).querySelector("#popup").querySelector("p").innerHTML = request;
 
 			}, false);
 
