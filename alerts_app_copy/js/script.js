@@ -38,7 +38,9 @@ document.addEventListener("DOMContentLoaded",
 );
 
 
-setInterval(refreshStatus, 180000);
+setInterval(function(){ window.location.href = window.location; }, 180000);
+
+//setInterval(refreshStatus, 180000);
 
 function refreshStatus()
 {
