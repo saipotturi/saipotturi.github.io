@@ -37,8 +37,7 @@ document.addEventListener("DOMContentLoaded",
 	}
 );
 
-
-setInterval(function(){ window.location.href = window.location; }, 180000);
+setInterval('window.location.reload(true)', 180000);
 
 //setInterval(refreshStatus, 180000);
 
