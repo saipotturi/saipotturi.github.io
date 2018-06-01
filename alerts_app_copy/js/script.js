@@ -38,7 +38,33 @@ document.addEventListener("DOMContentLoaded",
 );
 
 
+setInterval(refreshStatus, 180000);
 
+function refreshStatus()
+{
+	$ajaxUtils.sendGetRequest("data/cluster_list", 
+			refreshClusterTiles, false);
+}
+
+
+async function refreshClusterTiles(cluster_list)
+{
+	//var clusters = ["Thunderbolt", "CM_tagging"];
+	//var clusters = ["CM_tagging"];
+	var clusters = cluster_list.split(/\r\n|\r|\n/);
+	console.log(clusters);
+	var cluster_count = clusters.length;
+
+	var aggr_html = "";
+
+		for(var i=0; i<cluster_count; i++)
+	{
+		await status_func(clusters[i]);
+
+		//await status_func(clusters[i]);
+	}
+
+}
 
 /*
 
@@ -183,6 +209,8 @@ function status_func(cluster_name)
 
 
 //**********************************************************//
+
+
 
 
 async function loadClusterTiles(cluster_list)
